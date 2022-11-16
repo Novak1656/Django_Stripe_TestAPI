@@ -16,7 +16,7 @@ https://docs.google.com/document/d/1RqJhk-pRDuAk4pH1uqbY9-8uwAqEXB9eRQWLSMM_9sI/
 1. Необходимо создать и активировать виртуальное окружение.
 2. Скопируйте репозиторий git
 ```
-git clone https://github.com/Novak1656/.git
+git clone https://github.com/Novak1656/Django_Stripe_TestAPI.git
 ```   
 3. В корневой директории, где распологается файл .gitignore и docker-compose.yml создайте файл '.env'.
 Содержание файла должно быть следущим:
