@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  db:
+    restart: always
+    image: postgres:14.5
+    env_file:
+      - ./.env
+    ports:
+      - 5432:5432
+
+  web:
+    restart: always
+    build:
+      context: ./stripe_api
+      dockerfile: Dockerfile
+    command: bash -c "
+        python manage.py makemigrations
+        && python manage.py migrate
+        && python manage.py initadmin
+        && python manage.py createitems 25
+        && python manage.py creatediscounts 10
+        && python manage.py createtax 5
+        && python manage.py createorders 10
+        && python manage.py runserver 0.0.0.0:8000
+      "
+    volumes:
+      - ./stripe_api/:/usr/src/stripe_api
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env
+    depends_on:
+      - db
