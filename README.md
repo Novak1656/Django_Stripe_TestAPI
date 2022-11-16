@@ -36,12 +36,13 @@ DJANGO_SUPERUSER_USERNAME='Имя для администатора'
 DJANGO_SUPERUSER_EMAIL='Email для администатора (не обязательно)'
 DJANGO_SUPERUSER_PASSWORD='Пароль для администатора'
 ```
-4. Для запуска используя Docker находясь в дирректории проекта выполните следующие команды в терминале 
+4. Запуск приложения
+Для запуска используя Docker находясь в дирректории проекта выполните следующие команды в терминале 
 ```
 cd university
 docker-compose up -d --build
 ```
-5. Для обычного запуска выполните следующие команды в терминале
+Для обычного запуска выполните следующие команды в терминале
 ```
 pip install -r requirements.txt
 python manage.py makemigrations
@@ -53,7 +54,7 @@ python manage.py createtax 'Кол-во создаваемых записей в
 python manage.py createorders 'Кол-во создаваемых записей в бд'
 python manage.py runserver
 ```
-6. Перейдите по любому из маршрутов api
+5. Перейдите по любому из маршрутов api
 
 ## Маршруты API
 ### Основные
